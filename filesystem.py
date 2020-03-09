@@ -1,6 +1,6 @@
 # Case-study #12
-# Developers:   Besedina D. (50%),
-#               Setskov M.  (%).
+# Developers:   Besedina D. (55%),
+#               Setskov M.  (45%).
 import os
 import os.path
 
