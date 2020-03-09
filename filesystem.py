@@ -61,7 +61,6 @@ def countFiles(path):
             countFiles(path + '\\' + i)
         if os.path.isfile(path + '\\' + i):
             return len(os.listdir(path))
-            print(len(os.listdir(path)))
 
 def files(path_for_getsize):
     files_list = []
