@@ -13,12 +13,11 @@ def runCommand(command):
 def moveUp():
     pass
 
-def moveDown():
+def moveDown(currentDir):                                           #!!!!! (Диане) эту функцию в основном меню напускать от os.getcwd()
     newDir = input('Введите название нужного вам подкаталога: ')
-    dir_now = os.getcwd()
     while True:
         try:
-            os.chdir(dir_now + '\\' + newDir)
+            os.chdir(currentDir + '\\' + newDir)
             break
         except:
             print('Такого подкаталога не существует.')
