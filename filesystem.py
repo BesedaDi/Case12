@@ -42,9 +42,6 @@ def moveUp():
     os.chdir(up_dir)
     path = os.getcwd()
     print(path)
-def moveDown(currentDir):
-    pass
-    pass
 
 def moveDown(currentDir):                                           #!!!!! (Диане) эту функцию в основном меню напускать от os.getcwd()
     newDir = input('Введите название нужного вам подкаталога: ')
