@@ -6,15 +6,12 @@ def runCommand(command):
     elif command == 3:
         moveDown()
     elif command == 4:
+
         countFiles()
     elif command == 5:
         countBytes()
     elif command == 6:
         findFiles()
     elif command == 7:
-        pass
-
-
-
-
-runCommand()
+        print('Работа программы завершена.')
+        break
