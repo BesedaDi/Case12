@@ -82,7 +82,7 @@ def countBytes():
 
 def findFiles(target,path):
     targetsList = []
-    target = input('Введите часть и полное имя файла, список путей к которму вам необходимо найти: ')
+    target = input('Введите часть или полное имя файла, список путей к которму вам необходимо найти: ')
     path = input('Введите директорию, в которой нужно произвести поиск: ')
     for each_dir in files(path):
         if each_dir.find(target) != -1:
