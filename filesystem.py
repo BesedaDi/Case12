@@ -2,6 +2,8 @@
 # Developers:   Besedina D. (50%),
 #               Setskov M.  (%).
 import os
+import os.path
+
 def acceptCommand():
     command = input()
     while type(command) != int:
@@ -42,6 +44,20 @@ def moveUp():
     print(path)
 def moveDown(currentDir):
     pass
+    pass
+
+def moveDown(currentDir):                                           #!!!!! (Диане) эту функцию в основном меню напускать от os.getcwd()
+    newDir = input('Введите название нужного вам подкаталога: ')
+    while True:
+        try:
+            os.chdir(currentDir + '\\' + newDir)
+            break
+        except:
+            print('Такого подкаталога не существует.')
+            newDir = input('Введите корректное название католога: ')
+    print('Вы находитесь в данном каталоге:')
+    print(os.getcwd())
+
 def countFiles(path):
     import os
     for i in os.listdir(path):
@@ -53,10 +69,13 @@ def countFiles(path):
             return len(os.listdir(path))
             print(len(os.listdir(path)))
     pass
+
 def countBytes(path):
     pass
+
 def findFiles(target,path):
     pass
+
 
 def main():
     while True:
