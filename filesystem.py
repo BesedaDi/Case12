@@ -24,7 +24,7 @@ def runCommand(command):
     elif command == 2:
         moveUp()
     elif command == 3:
-        moveDown()
+        moveDown(os.getcwd())
     elif command == 4:
         path = input()
         countFiles(path)
@@ -43,7 +43,7 @@ def moveUp():
     path = os.getcwd()
     print(path)
 
-def moveDown(currentDir):                                           #!!!!! (Диане) эту функцию в основном меню напускать от os.getcwd()
+def moveDown(currentDir):
     newDir = input('Введите название нужного вам подкаталога: ')
     while True:
         try:
@@ -59,9 +59,7 @@ def countFiles(path):
     import os
     for i in os.listdir(path):
         if os.path.isdir(path + '\\' + i):
-            # print('спускаемся',path + '\\' + i)
             countFiles(path + '\\' + i)
-            # print('возвращаемся в',path)
         if os.path.isfile(path + '\\' + i):
             return len(os.listdir(path))
             print(len(os.listdir(path)))
