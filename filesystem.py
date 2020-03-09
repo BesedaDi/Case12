@@ -17,6 +17,7 @@ def acceptCommand():
         except ValueError:
             print('ERROR')
             command = input()
+            
 def runCommand(command):
     if command == 1:
         path = os.getcwd()
@@ -34,9 +35,8 @@ def runCommand(command):
         findFiles()
     elif command == 7:
         print('Работа программы завершена.')
-        pass
+        
 def moveUp():
-    import os
     path = os.getcwd()
     up_dir = os.path.dirname(path)
     os.chdir(up_dir)
@@ -56,17 +56,30 @@ def moveDown(currentDir):
     print(os.getcwd())
 
 def countFiles(path):
-    import os
     for i in os.listdir(path):
         if os.path.isdir(path + '\\' + i):
             countFiles(path + '\\' + i)
         if os.path.isfile(path + '\\' + i):
             return len(os.listdir(path))
             print(len(os.listdir(path)))
-    pass
 
-def countBytes(path):
-    pass
+def files(path_for_getsize):
+    files_list = []
+    for file in os.listdir(path_for_getsize):
+        path = os.path.join(path_for_getsize, file)
+        if not os.path.isdir(path):
+            files_list.append(path)
+        else:
+            files_list += files(path)
+    return files_list
+
+def countBytes():
+    path_for_getsize = input('Введите директорию для подсчета суммарного объема всех файлов: ')
+    size = 0
+    for each_dir in files(path_for_getsize):
+        size += os.path.getsize(each_dir)
+    return size
+    
 
 def findFiles(target,path):
     pass
